@@ -1,0 +1,185 @@
+{% extends 'dashboard.html' %} 
+
+
+{% block title %}{{ request.postavke.podrska_heading }} {% endblock title%} 
+
+
+{% block content %} 
+<div class="row bg-light">
+  <aside class="col-12 col-md-2 bg-dark py-2 d-none d-md-block" style="height: 100vh;">
+    <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+    <h5 class="text-light text-center mt-3">Dobro Dosli {{ global_user_profile.ime }}!</h5>
+    <div class="nav flex-column nav-pills mt-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a
+            class="nav-link text-light my-2 "
+            href="{% url 'dashboard' %}"
+        ><i class="fa-solid fa-house"></i> Pocetna</a>
+        <a
+            class="nav-link text-light my-2  "
+            id="v-pills-profile-tab"
+            href="{% url 'lista_preplata' %}"
+        ><i class="fa-solid fa-receipt"></i> Preplate</a>
+        <a
+            class="nav-link text-light my-2 "
+            href="{% url 'balance' %}"
+        ><i class="fa-solid fa-wallet"></i> Novčanik</a>
+        <a
+            class="nav-link text-light my-2 active"
+            href="{% url 'podrska' %}"
+        ><i class="fa-solid fa-comments"></i> Podrska</a>
+        <a
+        class="nav-link text-light my-2"
+        href="{% url 'postavke' %}"
+    ><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+    <a class="nav-link text-light my-2" href="{% url 'odjava' %}">
+        <i class="fa-solid fa-right-from-bracket"></i> Odjava
+    </a>
+    </div>
+</aside>
+
+<!-- Mobile Navigation (Navbar) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-block d-md-none">
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileNavOffcanvasLabel">Mobilna Navigacija</h5>
+    <button type="button" class="btn-close btn-lg bg-light" data-bs-dismiss="offcanvas" aria-label="Zatvori"></button>
+  </div>
+  <div class="offcanvas-body">
+    <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+    <hr class="rounded">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Početna</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'lista_preplata' %}"><i class="fa-solid fa-receipt"></i> Preplate</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'balance' %}"><i class="fa-solid fa-wallet"></i> Novčanik</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'podrska' %}"><i class="fa-solid fa-comments"></i> Podrška</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'postavke' %}"><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'odjava' %}"><i class="fa-solid fa-right-from-bracket"></i> Odjava</a>
+      </li>
+    </ul>
+  </div>
+</div>
+  
+  
+  
+  <style>
+    .navbar-nav .nav-link {
+      color: #f8f9fa; /* Boja teksta */
+      font-size: 1.2rem; /* Povećanje veličine fonta */
+      margin-bottom: 40px; /* Dodajte još veći razmak između stavki */
+    }
+  
+    .navbar-toggler {
+      margin-left: 25px; /* Dodajte marginu s lijeve strane ikone */
+    }
+    
+    /* Stilizacija ikona u linkovima */
+    .navbar-nav .nav-link i {
+      font-size: 1.5rem; /* Povećanje veličine ikona */
+      margin-right: 10px; /* Dodajte razmak između ikona i teksta */
+    }
+    
+    /* Stilizacija offcanvas panela */
+    .offcanvas {
+      position: absolute;
+      top: 0;
+      left: -100%; /* Pomaknite panel izvan ekrana */
+      width: 70%; /* Prilagodite širinu prema svojim preferencijama */
+      background-color: #212529; /* Tamna pozadina za tijelo panela */
+      box-shadow: none; /* Uklonite sjenu panela */
+      transition: left 0.3s ease-in-out; /* Dodajte animaciju pri otvaranju */
+    }
+    .offcanvas.show {
+      left: 0; /* Prikazivanje panela */
+    }
+  
+    hr.rounded {
+      border-top: 8px solid #bbb;
+      border-radius: 5px;
+    }
+  </style>
+
+
+  <div class="col-12 col-md py-2">
+    <div class='container'>
+
+      <h1 class='my-3'>{{ request.postavke.podrska_heading }}</h1>
+
+      <form method="post" action="{% url 'kontakt_forma' %}" id='kontaktForma'>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="ime" class="form-label">Ime</label>
+            <input type="text" class="form-control" name="ime" id="ime" required>
+        </div>
+        <div class="mb-3">
+            <label for="prezime" class="form-label">Prezime</label>
+            <input type="text" class="form-control" name="prezime" id="prezime" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email adresa</label>
+            <input type="email" class="form-control" name="email" id="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="telefon" class="form-label">Telefonski broj</label>
+            <input type="tel" class="form-control" name="telefon" id="telefon" required>
+        </div>
+        <div class="mb-3">
+            <label for="naslov" class="form-label">Naslov</label>
+            <input type="text" class="form-control" name="naslov" id="naslov" required>
+        </div>
+        <div class="mb-3">
+            <label for="poruka" class="form-label">Poruka</label>
+            <textarea class="form-control" name="poruka" id="poruka" rows="4" required></textarea>
+        </div>
+        <div class="g-recaptcha" data-sitekey="{{ recaptcha_public_key }}"></div>
+        <button type="submit" class="btn btn-primary"> <i class="fa-solid fa-paper-plane"></i> Pošalji</button>
+    </form>
+    {% if message_sent %}
+    <div class="alert alert-success mt-3" role="alert">
+        Vaša poruka je uspješno poslana. Javit ćemo vam se ubrzo!
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "{% url 'dashboard' %}";
+        }, 5000);  // 10000 ms = 10 seconds
+    </script>
+    {% endif %}
+
+
+    </div>
+  </div>
+</div>
+
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_public_key }}"></script>
+
+
+<script>
+  grecaptcha.ready(function() {
+    grecaptcha.execute('{{ recaptcha_public_key }}', { action: 'submit' }).then(function(token) {
+      var form = document.getElementById('kontaktForma');
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = 'g-recaptcha-response';
+      input.value = token;
+      form.appendChild(input);
+    });
+  });
+</script>
+
+
+{% endblock content %}

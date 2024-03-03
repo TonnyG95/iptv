@@ -1,0 +1,289 @@
+{% extends 'dashboard.html' %}
+{% block title %}Kupi pretplatu{% endblock title %}
+{% block content %}
+<div class="row bg-light">
+   <aside class="col-12 col-md-2 bg-dark py-2 d-none d-md-block" style="height: 100vh;">
+      <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+      <h5 class="text-light text-center mt-3">Dobro Dosli {{ global_user_profile.ime }}!</h5>
+      <div class="nav flex-column nav-pills mt-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+         <a
+            class="nav-link text-light my-2 "
+            href="{% url 'dashboard' %}"
+            ><i class="fa-solid fa-house"></i> Pocetna</a>
+         <a
+            class="nav-link text-light my-2 active"
+            id="v-pills-profile-tab"
+            href="{% url 'lista_preplata' %}"
+            ><i class="fa-solid fa-receipt"></i> Preplate</a>
+         <a
+            class="nav-link text-light my-2 "
+            href="{% url 'balance' %}"
+            ><i class="fa-solid fa-wallet"></i> Novčanik</a>
+         <a
+            class="nav-link text-light my-2"
+            href="{% url 'podrska' %}"
+            ><i class="fa-solid fa-comments"></i> Podrska</a>
+         <a
+            class="nav-link text-light my-2"
+            href="{% url 'postavke' %}"
+            ><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+         <a class="nav-link text-light my-2" href="{% url 'odjava' %}">
+         <i class="fa-solid fa-right-from-bracket"></i> Odjava
+         </a>
+      </div>
+   </aside>
+   <!-- Mobile Navigation (Navbar) -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light d-block d-md-none">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+   </nav>
+   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+      <div class="offcanvas-header">
+         <h5 class="offcanvas-title" id="mobileNavOffcanvasLabel">Mobilna Navigacija</h5>
+         <button type="button" class="btn-close btn-lg bg-light" data-bs-dismiss="offcanvas" aria-label="Zatvori"></button>
+      </div>
+      <div class="offcanvas-body">
+         <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+         <hr class="rounded">
+         <ul class="navbar-nav">
+            <li class="nav-item ">
+               <a class="nav-link" href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Početna</a>
+            </li>
+            <li class="nav-item active">
+               <a class="nav-link" href="{% url 'lista_preplata' %}"><i class="fa-solid fa-receipt"></i> Preplate</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'balance' %}"><i class="fa-solid fa-wallet"></i> Novčanik</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'podrska' %}"><i class="fa-solid fa-comments"></i> Podrška</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'postavke' %}"><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'odjava' %}"><i class="fa-solid fa-right-from-bracket"></i> Odjava</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <style>
+      /* Navbar */
+      .navbar-nav .nav-link {
+      color: #f8f9fa;
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      }
+      .navbar-toggler {
+      margin-left: 25px;
+      }
+      .navbar-nav .nav-link i {
+      font-size: 1.5rem;
+      margin-right: 10px;
+      }
+      /* Offcanvas Panel */
+      .offcanvas {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 70%;
+      background-color: #212529;
+      box-shadow: none;
+      transition: left 0.3s ease-in-out;
+      }
+      .offcanvas.show {
+      left: 0;
+      }
+      /* Rounded HR */
+      hr.rounded {
+      border-top: 8px solid #bbb;
+      border-radius: 5px;
+      }
+      /* animacija */
+      .custom-alert {
+      background-color: #f8d7da;
+      border-color: #f5c6cb;
+      color: #721c24;
+      border-radius: 20px;
+      }
+      .animated-icon i {
+      animation: shake 2s infinite;
+      }
+      @keyframes shake {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(15deg); }
+      20% { transform: rotate(-15deg); }
+      30% { transform: rotate(15deg); }
+      40% { transform: rotate(-15deg); }
+      100% { transform: rotate(0deg); }
+      }
+      .shake {
+      animation: shake-button 1s infinite;
+      }
+      @keyframes shake-button {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      50% { transform: translateX(3px); }
+      75% { transform: translateX(-3px); }
+      }
+   </style>
+   <div class="col-12 col-md py-2">
+      <div class="container">
+         <h1 class='mt-3'>Kupite ili produžite pretplatu</h1>
+         {% if uskoro_istice %}
+         <div class="container my-4">
+            {% for preplata in uskoro_istice %}
+            <div class="alert custom-alert rounded p-4" role="alert">
+               <div class="row align-items-center">
+                  <div class="col-2 text-center">
+                     <div class="animated-icon">
+                        <i class="fas fa-bell fa-3x"></i>
+                     </div>
+                  </div>
+                  <div class="col-8">
+                     <h4 class="alert-heading mb-1 text-danger">Usluga ističe uskoro!</h4>
+                     <p class="mb-0">Istek pretplate za uslugu {{ preplata.pretplata.naziv }} je {{ preplata.datum_isteka|date:"d.m.Y" }}. Produžite ju na vrijeme da bi nastavili koristiti uslugu!</p>
+                  </div>
+                  <div class="col-2 text-end">
+                     <a href="{% url 'produzi_pretplatu' preplata.pretplata.id %}" class="btn btn-danger shake">
+                     <i class="fas fa-redo-alt me-2"></i> Produži
+                     </a>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+         {% endif %}
+         <form method="post">
+            {% csrf_token %}
+            <div class="row mt-4">
+               {% for pretplata in pretplate %}
+               <div class="col-lg-3">
+                   <form method="post">
+                       {% csrf_token %}
+                       <div class="card mb-5 mb-lg-0">
+                           <div class="card-body">
+                               <h5 class="card-title text-muted text-uppercase text-center">{{ pretplata.naziv }}</h5>
+                               <h6 class="card-price text-center">{{ pretplata.cijena }}€</h6>
+                               <hr>
+                               <ul class="fa-ul">
+                                   {% for funkcija in pretplata.funkcije.splitlines %}
+                                   {% with first_char=funkcija|stringformat:"s"|first %}
+                                   <li class="{{ first_char|yesno:"my-3,my-3 text-muted" }}">
+                                       <span class="fa-li"><i class="{{ first_char|yesno:'fas fa-check,far fa-times' }}"></i></span>
+                                       {{ funkcija|slice:"1:"|default:funkcija }}
+                                   </li>
+                                   {% endwith %}
+                                   {% endfor %}
+                               </ul>
+                               <select id="tip_usluge_{{ pretplata.id }}" name="tip_usluge" class="form-select mt-3" onchange="validateForm({{ pretplata.id }})">
+                                   <option value="">--Odaberite tip usluge--</option>
+                                   {% for choice, display_name in TIP_USLUGE_CHOICES %}
+                                   <option value="{{ choice }}">{{ display_name }}</option>
+                                   {% endfor %}
+                               </select>
+                               <div id="mag_fields_{{ pretplata.id }}" style="display:none;" class="mt-3">
+                                   <input type="text" id="mag_model_{{ pretplata.id }}" name="mag_model" class="form-control mb-2" placeholder="Model uređaja" />
+                                   <input type="text" id="mag_mac_{{ pretplata.id }}" name="mag_mac" class="form-control mb-2" placeholder="MAC adresa" />
+                                   <input type="text" id="mag_sn_{{ pretplata.id }}" name="mag_sn" class="form-control mb-2" placeholder="Serijski broj" />
+                               </div>
+                               <div class="d-grid mt-3">
+                                   <button type="submit" id="buyButton_{{ pretplata.id }}" name="pretplata" value="{{ pretplata.id }}" class="btn btn-primary text-uppercase" disabled><i class="fa-solid fa-cart-plus"></i> Kupi</button>
+                               </div>
+                           </div>
+                       </div>
+                   </form>
+               </div>
+               {% endfor %}
+           </div>
+           
+         </form>
+         <div class="container my-4">
+            <div class="row d-flex align-items-stretch">
+               <!-- Dodana klasa za istezanje reda -->
+               <!-- Kolona za obavijest o balansu -->
+               <div class="col-md-6">
+                  <div class="alert custom-alert bg-success text-white rounded-lg p-4 h-100" style="background-image: url('putanja_do_slike.jpg'); background-size: cover;">
+                     <div class="text-center">
+                        <div class="animated-icon mb-2">
+                           <i class="fas fa-coins fa-3x"></i>
+                        </div>
+                        <h5 class="alert-heading mb-1">Vaš balans</h5>
+                        <p class="mb-2">Balans: {{ korisnicki_balans }} €</p>
+                     </div>
+                  </div>
+               </div>
+               <!-- Kolona s informacijama o zadnjim transakcijama -->
+               <div class="col-md-6">
+                  <div class="card h-100">
+                     <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Zadnje transakcije</h5>
+                     </div>
+                     <div class="card-body">
+                        {% if zadnje_preplate %}
+                        <ul class="list-group">
+                           {% for preplata in zadnje_preplate %}
+                           <li class="list-group-item d-flex justify-content-between align-items-center">
+                              {{ preplata.pretplata.naziv }} <span class="badge bg-secondary rounded-pill">{{ preplata.datum_pocetka|date:"d.m.Y" }}</span>
+                           </li>
+                           {% endfor %}
+                        </ul>
+                        {% else %}
+                        <div class="text-center text-muted">
+                           Nema nedavnih transakcija.
+                        </div>
+                        {% endif %}
+                     </div>
+                     <div class="container">
+                     </div>
+                  </div>
+               </div>
+               <!-- Poruke -->
+               {% if messages %}
+               <div class="container mt-3">
+                  {% for message in messages %}
+                  <div class="alert {% if message.tags == 'success' %}alert-success{% elif message.tags == 'error' %}alert-danger{% endif %} alert-dismissible fade show" role="alert">
+                     {{ message }}
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  {% endfor %}
+               </div>
+               {% endif %}
+            </div>
+         </div>
+</div>
+<script>
+   function validateForm(pretplataId) {
+      const tipUsluge = document.getElementById(`tip_usluge_${pretplataId}`).value;
+      const magFields = document.getElementById(`mag_fields_${pretplataId}`);
+      const buyButton = document.getElementById(`buyButton_${pretplataId}`);
+  
+      const validateMAGFields = () => {
+          const model = document.getElementById(`mag_model_${pretplataId}`).value;
+          const mac = document.getElementById(`mag_mac_${pretplataId}`).value;
+          const sn = document.getElementById(`mag_sn_${pretplataId}`).value;
+          buyButton.disabled = !(model && mac && sn);
+      };
+  
+      if (tipUsluge === 'MAG') {
+          magFields.style.display = 'block';
+          validateMAGFields();
+      } else {
+          magFields.style.display = 'none';
+          buyButton.disabled = tipUsluge !== 'M3U';
+      }
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+      const allIds = Array.from(document.querySelectorAll('[id^="tip_usluge_"]')).map(el => el.id.split('_').pop());
+      allIds.forEach(id => {
+          validateForm(id);
+          document.getElementById(`mag_model_${id}`).addEventListener("input", () => validateForm(id));
+          document.getElementById(`mag_mac_${id}`).addEventListener("input", () => validateForm(id));
+          document.getElementById(`mag_sn_${id}`).addEventListener("input", () => validateForm(id));
+      });
+  });
+  
+</script>
+{% endblock content %}

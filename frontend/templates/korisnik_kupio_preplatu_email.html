@@ -1,0 +1,906 @@
+{% load custom_tags %}
+{% get_platform_settings as platform_settings %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+>
+  <head>
+    <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="x-apple-disable-message-reformatting" />
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!--<![endif]-->
+    <title></title>
+
+    <style type="text/css">
+      @media only screen and (min-width: 620px) {
+        .u-row {
+          width: 600px !important;
+        }
+        .u-row .u-col {
+          vertical-align: top;
+        }
+
+        .u-row .u-col-24p67 {
+          width: 148.02px !important;
+        }
+
+        .u-row .u-col-33p33 {
+          width: 199.98px !important;
+        }
+
+        .u-row .u-col-42 {
+          width: 252px !important;
+        }
+
+        .u-row .u-col-100 {
+          width: 600px !important;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .u-row-container {
+          max-width: 100% !important;
+          padding-left: 0px !important;
+          padding-right: 0px !important;
+        }
+        .u-row .u-col {
+          min-width: 320px !important;
+          max-width: 100% !important;
+          display: block !important;
+        }
+        .u-row {
+          width: 100% !important;
+        }
+        .u-col {
+          width: 100% !important;
+        }
+        .u-col > div {
+          margin: 0 auto;
+        }
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      table,
+      tr,
+      td {
+        vertical-align: top;
+        border-collapse: collapse;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .ie-container table,
+      .mso-container table {
+        table-layout: fixed;
+      }
+
+      * {
+        line-height: inherit;
+      }
+
+      a[x-apple-data-detectors="true"] {
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+
+      table,
+      td {
+        color: #000000;
+      }
+      #u_body a {
+        color: #0000ee;
+        text-decoration: underline;
+      }
+      @media (max-width: 480px) {
+        #u_content_heading_1 .v-font-size {
+          font-size: 26px !important;
+        }
+        #u_content_image_3 .v-container-padding-padding {
+          padding: 40px 10px 10px !important;
+        }
+        #u_content_image_3 .v-src-width {
+          width: auto !important;
+        }
+        #u_content_image_3 .v-src-max-width {
+          max-width: 35% !important;
+        }
+        #u_content_image_3 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_text_13 .v-container-padding-padding {
+          padding: 0px 10px 30px !important;
+        }
+        #u_content_text_13 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_text_14 .v-container-padding-padding {
+          padding: 0px 10px 30px !important;
+        }
+        #u_content_text_14 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_text_15 .v-container-padding-padding {
+          padding: 10px 10px 5px !important;
+        }
+        #u_content_text_15 .v-text-align {
+          text-align: center !important;
+        }
+        #u_content_social_1 .v-container-padding-padding {
+          padding: 10px 10px 40px 75px !important;
+        }
+      }
+    </style>
+
+    <!--[if !mso]><!-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!--<![endif]-->
+  </head>
+
+  <body
+    class="clean-body u_body"
+    style="
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      background-color: #f1f1f1;
+      color: #000000;
+    "
+  >
+    <!--[if IE]><div class="ie-container"><![endif]-->
+    <!--[if mso]><div class="mso-container"><![endif]-->
+    <table
+      id="u_body"
+      style="
+        border-collapse: collapse;
+        table-layout: fixed;
+        border-spacing: 0;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        vertical-align: top;
+        min-width: 320px;
+        margin: 0 auto;
+        background-color: #f1f1f1;
+        width: 100%;
+      "
+      cellpadding="0"
+      cellspacing="0"
+    >
+      <tbody>
+        <tr style="vertical-align: top">
+          <td
+            style="
+              word-break: break-word;
+              border-collapse: collapse !important;
+              vertical-align: top;
+            "
+          >
+            <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color: #f1f1f1;"><![endif]-->
+
+            <div
+              class="u-row-container"
+              style="padding: 0px; background-color: transparent"
+            >
+              <div
+                class="u-row"
+                style="
+                  margin: 0 auto;
+                  min-width: 320px;
+                  max-width: 600px;
+                  overflow-wrap: break-word;
+                  word-wrap: break-word;
+                  word-break: break-word;
+                  background-color: transparent;
+                "
+              >
+                <div
+                  style="
+                    border-collapse: collapse;
+                    display: table;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                  "
+                >
+                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+
+                  <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #2b3cad;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;" valign="top"><![endif]-->
+                  <div
+                    class="u-col u-col-100"
+                    style="
+                      max-width: 320px;
+                      min-width: 600px;
+                      display: table-cell;
+                      vertical-align: top;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #2b3cad;
+                        height: 100%;
+                        width: 100% !important;
+                      "
+                    >
+                      <!--[if (!mso)&(!IE)]><!--><div
+                        style="
+                          box-sizing: border-box;
+                          height: 100%;
+                          padding: 0px;
+                          border-top: 0px solid transparent;
+                          border-left: 0px solid transparent;
+                          border-right: 0px solid transparent;
+                          border-bottom: 0px solid transparent;
+                        "
+                      ><!--<![endif]-->
+                        <table
+                          id="u_content_heading_1"
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 20px 10px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                                <h1
+                                  class="v-text-align v-font-size"
+                                  style="
+                                    margin: 0px;
+                                    color: #ffffff;
+                                    line-height: 140%;
+                                    text-align: center;
+                                    word-wrap: break-word;
+                                    font-family: 'Raleway', sans-serif;
+                                    font-size: 38px;
+                                    font-weight: 700;
+                                  "
+                                >
+                                {{ platform_settings.ime_platforme }}
+                                </h1>         
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!--[if (!mso)&(!IE)]><!-->
+                      </div>
+                      <!--<![endif]-->
+                    </div>
+                  </div>
+                  <!--[if (mso)|(IE)]></td><![endif]-->
+                  <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="u-row-container"
+              style="padding: 5px 0px 0px; background-color: transparent"
+            >
+              <div
+                class="u-row"
+                style="
+                  margin: 0 auto;
+                  min-width: 320px;
+                  max-width: 600px;
+                  overflow-wrap: break-word;
+                  word-wrap: break-word;
+                  word-break: break-word;
+                  background-color: transparent;
+                "
+              >
+                <div
+                  style="
+                    border-collapse: collapse;
+                    display: table;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                  "
+                >
+                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 5px 0px 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+
+                  <!--[if (mso)|(IE)]><td align="center" width="600" style="background-color: #ffffff;width: 600px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+                  <div
+                    class="u-col u-col-100"
+                    style="
+                      max-width: 320px;
+                      min-width: 600px;
+                      display: table-cell;
+                      vertical-align: top;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #ffffff;
+                        height: 100%;
+                        width: 100% !important;
+                        border-radius: 0px;
+                        -webkit-border-radius: 0px;
+                        -moz-border-radius: 0px;
+                      "
+                    >
+                      <!--[if (!mso)&(!IE)]><!--><div
+                        style="
+                          box-sizing: border-box;
+                          height: 100%;
+                          padding: 0px;
+                          border-top: 0px solid transparent;
+                          border-left: 0px solid transparent;
+                          border-right: 0px solid transparent;
+                          border-bottom: 0px solid transparent;
+                          border-radius: 0px;
+                          -webkit-border-radius: 0px;
+                          -moz-border-radius: 0px;
+                        "
+                      ><!--<![endif]-->
+                        <table
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 10px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                                <h1
+                                  class="v-text-align v-font-size"
+                                  style="
+                                    margin: 0px;
+                                    color: #2b3cad;
+                                    line-height: 140%;
+                                    text-align: center;
+                                    word-wrap: break-word;
+                                    font-family: 'Raleway', sans-serif;
+                                    font-size: 25px;
+                                    font-weight: 700;
+                                  "
+                                >
+                                  Pozdrav Admin Team
+                                </h1>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 20px 29px 29px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                                <div
+                                  class="v-text-align v-font-size"
+                                  style="
+                                    font-size: 18px;
+                                    line-height: 140%;
+                                    text-align: center;
+                                    word-wrap: break-word;
+                                  "
+                                >
+                                <h4 style="line-height: 140%">Obavijest o kupnji usluge</h4><br>
+                                <p>Imamo sretne vijesti za vas! Korisnik {{ korisnik.userprofile.ime }} je upravo uplatio pretplatu.</p> <br>
+                                <p> <strong>Detalji: </strong> </p> 
+                                <br>
+                                  <strong>ime Korisnika:</strong> {{ korisnik.userprofile.ime }} <br>
+                                  <strong>Email:</strong> {{ korisnik.email }} <br>
+                                  <strong>Uplata za pretplatu:</strong> {{ pretplata.naziv }} <br>
+                                  <strong>Datum uplate:</strong> {{ datum_pocetka }} <br>
+                                  <strong>Datum isteka pretplate:</strong> {{ datum_isteka }}
+                                  <br>
+                                  <strong>Korisnikov M3U Username:</strong> {{ m3u_username }}<br>
+                                  <strong>Korisnikov M3U Password:</strong> {{ m3u_password }}<br>
+                                  <strong>Korisnikov M3U Link:</strong> {{ m3u_link }}<br>
+                              <br>
+                              <p><strong>Napomena:</strong> Molimo vas da ažurirate korisnikovu pretplatu kako bi mogao uživati u našim uslugama. U slučaju da korisnik ne produži pretplatu, usluga će isteći nakon 5 dana nakon datuma isteka.</p> 
+                              <br>
+                              <p>Ukoliko dođe do toga admini će biti obaviješteni da korisniku ugase pristup usluzi</p>
+                              <br>
+                              <p>S poštovanjem,<br>
+                                  Vaša  {{ platform_settings.ime_platforme }}<br>
+                                  Platfroma<br>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!--[if (!mso)&(!IE)]><!-->
+                      </div>
+                      <!--<![endif]-->
+                    </div>
+                  </div>
+                  <!--[if (mso)|(IE)]></td><![endif]-->
+                  <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="u-row-container"
+              style="padding: 0px; background-color: transparent"
+            >
+              <div
+                class="u-row"
+                style="
+                  margin: 0 auto;
+                  min-width: 320px;
+                  max-width: 600px;
+                  overflow-wrap: break-word;
+                  word-wrap: break-word;
+                  word-break: break-word;
+                  background-color: transparent;
+                "
+              >
+                <div
+                  style="
+                    border-collapse: collapse;
+                    display: table;
+                    width: 100%;
+                    height: 100%;
+                    background-color: transparent;
+                  "
+                >
+                  <!--[if (mso)|(IE)]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 0px;background-color: transparent;" align="center"><table cellpadding="0" cellspacing="0" border="0" style="width:600px;"><tr style="background-color: transparent;"><![endif]-->
+
+                  <!--[if (mso)|(IE)]><td align="center" width="199" style="background-color: #f5f7ff;width: 199px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+                  <div
+                    class="u-col u-col-33p33"
+                    style="
+                      max-width: 320px;
+                      min-width: 199.98px;
+                      display: table-cell;
+                      vertical-align: top;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f5f7ff;
+                        height: 100%;
+                        width: 100% !important;
+                        border-radius: 0px;
+                        -webkit-border-radius: 0px;
+                        -moz-border-radius: 0px;
+                      "
+                    >
+                      <!--[if (!mso)&(!IE)]><!--><div
+                        style="
+                          box-sizing: border-box;
+                          height: 100%;
+                          padding: 0px;
+                          border-top: 0px solid transparent;
+                          border-left: 0px solid transparent;
+                          border-right: 0px solid transparent;
+                          border-bottom: 0px solid transparent;
+                          border-radius: 0px;
+                          -webkit-border-radius: 0px;
+                          -moz-border-radius: 0px;
+                        "
+                      ><!--<![endif]-->
+                        <table
+                          id="u_content_image_3"
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 60px 10px 10px 15px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                                <table
+                                  width="100%"
+                                  cellpadding="0"
+                                  cellspacing="0"
+                                  border="0"
+                                >
+                                  <tr>
+                                    <td
+                                      class="v-text-align"
+                                      style="
+                                        padding-right: 0px;
+                                        padding-left: 0px;
+                                      "
+                                      align="left"
+                                    >
+                                      <img
+                                        align="left"
+                                        border="0"
+                                        src="{{ platform_settings.logo.url }}"
+                                        alt="{{ platform_settings.ime_platforme }} Logo"
+                                        title="{{ platform_settings.ime_platforme }}"
+                                        style="
+                                          outline: none;
+                                          text-decoration: none;
+                                          -ms-interpolation-mode: bicubic;
+                                          clear: both;
+                                          display: inline-block !important;
+                                          border: none;
+                                          height: auto;
+                                          float: none;
+                                          width: 99%;
+                                          max-width: 173.23px;
+                                        "
+                                        width="173.23"
+                                        class="v-src-width v-src-max-width"
+                                      />
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table
+                          id="u_content_text_13"
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 0px 10px 60px 15px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                                <div
+                                  class="v-text-align v-font-size"
+                                  style="
+                                    font-size: 14px;
+                                    line-height: 140%;
+                                    text-align: left;
+                                    word-wrap: break-word;
+                                  "
+                                >
+                                  <p style="font-size: 14px; line-height: 140%">
+                                     
+                                  </p>
+                                  <p style="font-size: 14px; line-height: 140%">
+                                    <span
+                                      style="
+                                        font-size: 14px;
+                                        line-height: 19.6px;
+                                      "
+                                      >{{ platform_settings.email_opis }}</span
+                                    >
+                                  </p>
+                                  <p style="font-size: 14px; line-height: 140%">
+                                    <span
+                                      style="
+                                        font-size: 14px;
+                                        line-height: 19.6px;
+                                      "
+                                      >{{ platform_settings.email_website_link }}</span
+                                    >
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!--[if (!mso)&(!IE)]><!-->
+                      </div>
+                      <!--<![endif]-->
+                    </div>
+                  </div>
+                  <!--[if (mso)|(IE)]></td><![endif]-->
+                  <!--[if (mso)|(IE)]><td align="center" width="148" style="background-color: #f5f7ff;width: 148px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+                  <div
+                    class="u-col u-col-24p67"
+                    style="
+                      max-width: 320px;
+                      min-width: 148.02px;
+                      display: table-cell;
+                      vertical-align: top;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f5f7ff;
+                        height: 100%;
+                        width: 100% !important;
+                        border-radius: 0px;
+                        -webkit-border-radius: 0px;
+                        -moz-border-radius: 0px;
+                      "
+                    >
+                      <!--[if (!mso)&(!IE)]><!--><div
+                        style="
+                          box-sizing: border-box;
+                          height: 100%;
+                          padding: 0px;
+                          border-top: 0px solid transparent;
+                          border-left: 0px solid transparent;
+                          border-right: 0px solid transparent;
+                          border-bottom: 0px solid transparent;
+                          border-radius: 0px;
+                          -webkit-border-radius: 0px;
+                          -moz-border-radius: 0px;
+                        "
+                      ><!--<![endif]-->
+                        <table
+                          id="u_content_text_14"
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                        <tbody>
+                          <tr>
+                              <td
+                                  class="v-container-padding-padding"
+                                  style="
+                                      overflow-wrap: break-word;
+                                      word-break: break-word;
+                                      padding: 60px 10px 10px 38px;
+                                      font-family: arial, helvetica, sans-serif;"
+                                  align="left">
+                                  <div
+                                      class="v-text-align v-font-size"
+                                      style="
+                                          font-size: 14px;
+                                          line-height: 180%;
+                                          text-align: left;
+                                          word-wrap: break-word;">
+                                      <p style="font-size: 14px; line-height: 180%">
+                                          <strong>Links</strong>
+                                      </p> 
+                                      <!-- Dodatni linkovi iz ManyToMany veze "linkovi" -->
+                                      {% for link in platform_settings.linkovi.all %}
+                                          <p style="font-size: 14px; line-height: 180%">
+                                              <a href="{{ link.link_url }}">{{ link.ime_linka }}</a>
+                                          </p>
+                                      {% endfor %}
+                                  </div>
+                              </td>
+                          </tr>
+                      </tbody>
+                        </table>
+
+                        <!--[if (!mso)&(!IE)]><!-->
+                      </div>
+                      <!--<![endif]-->
+                    </div>
+                  </div>
+                  <!--[if (mso)|(IE)]></td><![endif]-->
+                  <!--[if (mso)|(IE)]><td align="center" width="252" style="background-color: #f5f7ff;width: 252px;padding: 0px;border-top: 0px solid transparent;border-left: 0px solid transparent;border-right: 0px solid transparent;border-bottom: 0px solid transparent;border-radius: 0px;-webkit-border-radius: 0px; -moz-border-radius: 0px;" valign="top"><![endif]-->
+                  <div
+                    class="u-col u-col-42"
+                    style="
+                      max-width: 320px;
+                      min-width: 252px;
+                      display: table-cell;
+                      vertical-align: top;
+                    "
+                  >
+                    <div
+                      style="
+                        background-color: #f5f7ff;
+                        height: 100%;
+                        width: 100% !important;
+                        border-radius: 0px;
+                        -webkit-border-radius: 0px;
+                        -moz-border-radius: 0px;
+                      "
+                    >
+                      <!--[if (!mso)&(!IE)]><!--><div
+                        style="
+                          box-sizing: border-box;
+                          height: 100%;
+                          padding: 0px;
+                          border-top: 0px solid transparent;
+                          border-left: 0px solid transparent;
+                          border-right: 0px solid transparent;
+                          border-bottom: 0px solid transparent;
+                          border-radius: 0px;
+                          -webkit-border-radius: 0px;
+                          -moz-border-radius: 0px;
+                        "
+                      ><!--<![endif]-->
+                        <table
+                          id="u_content_text_15"
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 60px 10px 10px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                                <div
+                                  class="v-text-align v-font-size"
+                                  style="
+                                    font-size: 14px;
+                                    line-height: 140%;
+                                    text-align: center;
+                                    word-wrap: break-word;
+                                  "
+                                >
+                                  <p style="font-size: 14px; line-height: 140%">
+                                    <strong>{{ platform_settings.email_support_mail }}</strong>
+                                  </p>
+                                  <p style="font-size: 14px; line-height: 140%">
+                                    {{ platform_settings.email_support_phone }}
+                                  </p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <table
+                          id="u_content_social_1"
+                          style="font-family: arial, helvetica, sans-serif"
+                          role="presentation"
+                          cellpadding="0"
+                          cellspacing="0"
+                          width="100%"
+                          border="0"
+                        >
+                          <tbody>
+                            <tr>
+                              <td
+                                class="v-container-padding-padding"
+                                style="
+                                  overflow-wrap: break-word;
+                                  word-break: break-word;
+                                  padding: 10px;
+                                  font-family: arial, helvetica, sans-serif;
+                                "
+                                align="left"
+                              >
+                              <div align="center">
+                                <div style="display: table; margin: 0 auto;">
+                                    <!--[if (mso)|(IE)]><table width="73" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-collapse:collapse;" align="center"><table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace: 0pt;mso-table-rspace: 0pt; width:73px;"><tr><![endif]-->
+                            
+                                    <!--[if (mso)|(IE)]><td width="32" style="width:32px; padding-right: 5px;" valign="top"><![endif]-->
+                                    <table
+                                        align="center"
+                                        border="0"
+                                        cellspacing="0"
+                                        cellpadding="0"
+                                        width="32"
+                                        height="32"
+                                        style="
+                                            width: 32px !important;
+                                            height: 32px !important;
+                                            display: inline-block;
+                                            border-collapse: collapse;
+                                            table-layout: fixed;
+                                            border-spacing: 0;
+                                            mso-table-lspace: 0pt;
+                                            mso-table-rspace: 0pt;
+                                            vertical-align: middle;
+                                        "
+                                    >
+                                        <tbody>
+                                            <tr style="vertical-align: middle; text-align: center;">
+                                                {% for mreza in platform_settings.drustvene_mreze.all %}
+                                                    <td style="border-collapse: collapse !important; vertical-align: middle;">
+                                                        <a href="{{ mreza.link_mreze }}" title="{{ mreza.ime_mreze }}" target="_blank">
+                                                            <img src="{{ mreza.ikona_mreze.url }}" alt="{{ mreza.ime_mreze }}" title="{{ mreza.ime_mreze }}" width="50" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; clear: both; display: inline-block !important; border: none; height: auto; max-width: 50px !important;">
+                                                        </a>
+                                                    </td>
+                                                {% endfor %}
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <!--[if (!mso)&(!IE)]><!-->
+                      </div>
+                      <!--<![endif]-->
+                    </div>
+                  </div>
+                  <!--[if (mso)|(IE)]></td><![endif]-->
+                  <!--[if (mso)|(IE)]></tr></table></td></tr></table><![endif]-->
+                </div>
+              </div>
+            </div>
+
+            <!--[if (mso)|(IE)]></td></tr></table><![endif]-->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--[if mso]></div><![endif]-->
+    <!--[if IE]></div><![endif]-->
+  </body>
+</html>

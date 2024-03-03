@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Potvrda Plaćanja{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1>Potvrda Plaćanja</h1>
+    <p>Odabrali ste pretplatu: <strong>{{ pretplata.naziv }}</strong></p>
+    <p>Cijena: {{ pretplata.cijena }} €</p>
+    <form method="post">
+        {% csrf_token %}
+        <a type='submit' href="{% url 'placanje_pretplate' pretplata.id %}" class="btn btn-primary">Odaberi Pretplatu</a>
+    </form>
+    {% if poruka %}
+        <div class="alert alert-danger mt-3">{{ poruka }}</div>
+    {% endif %}
+</div>
+{% endblock content %}

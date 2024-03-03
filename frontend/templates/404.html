@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Stranica ne postoji {% endblock title %}
+
+{% block content %}
+
+<div class="d-flex align-items-center justify-content-center vh-100">
+    <div class="text-center">
+        <h1 class="display-1 fw-bold">404</h1>
+        <p class="fs-3"> <span class="text-danger">Opps!</span> Stranica nije pronađena.</p>
+        <p class="lead">
+            Izgleda da ste zalutali, Stranica koju tražite ne postoji
+          </p>
+        <a href="{% url 'dashboard' %}" class="btn btn-primary">Povratak na početnu</a> 
+    </div>
+</div>
+
+
+{% endblock content %}

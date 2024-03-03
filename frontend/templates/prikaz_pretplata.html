@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Dostupne Pretplate{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+  <h1 class="mt-5">Dostupne Pretplate</h1>
+
+  {% if pretplate %}
+    <ul class="list-group mt-3">
+      {% for pretplata in pretplate %}
+        <li class="list-group-item">
+          <h3>{{ pretplata.naziv }}</h3>
+          <p>Cijena: {{ pretplata.cijena }} €</p>
+          <p>Trajanje: {{ pretplata.trajanje_u_danima }} dana</p>
+          <form method="post" action="{% url 'placanje_pretplate' pretplata.id %}">
+            {% csrf_token %}
+            <button class="btn btn-primary" type="submit">Plati Pretplatu</button>
+          </form>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p class="mt-3">Trenutno nema dostupnih pretplata.</p>
+  {% endif %}
+</div>
+
+{% endblock content %}

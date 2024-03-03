@@ -1,0 +1,5 @@
+version: 1
+cron:
+ - name: "dailytask"
+   url: "/dailytask/"
+   schedule: "0 0 * * *"

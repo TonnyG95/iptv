@@ -1,0 +1,207 @@
+{% extends 'dashboard.html' %} 
+
+
+{% block title %}{{ request.postavke.novcanik_heading }} {% endblock title%} 
+
+
+{% block content %} 
+<div class="row bg-light">
+  <aside class="col-12 col-md-2 bg-dark py-2 d-none d-md-block" style="height: 100vh;">
+    <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+    <h5 class="text-light text-center mt-3">Dobro Dosli {{ global_user_profile.ime }}!</h5>
+    <div class="nav flex-column nav-pills mt-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a
+            class="nav-link text-light my-2 "
+            href="{% url 'dashboard' %}"
+        ><i class="fa-solid fa-house"></i> Pocetna</a>
+        <a
+            class="nav-link text-light my-2  "
+            id="v-pills-profile-tab"
+            href="{% url 'lista_preplata' %}"
+        ><i class="fa-solid fa-receipt"></i> Preplate</a>
+        <a
+            class="nav-link text-light my-2 active"
+            href="{% url 'balance' %}"
+        ><i class="fa-solid fa-wallet"></i> Novčanik</a>
+        <a
+            class="nav-link text-light my-2"
+            href="{% url 'podrska' %}"
+        ><i class="fa-solid fa-comments"></i> Podrska</a>
+        <a
+        class="nav-link text-light my-2"
+        href="{% url 'postavke' %}"
+    ><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+    <a class="nav-link text-light my-2" href="{% url 'odjava' %}">
+        <i class="fa-solid fa-right-from-bracket"></i> Odjava
+    </a>
+    </div>
+</aside>
+
+<!-- Mobile Navigation (Navbar) -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light d-block d-md-none">
+  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="mobileNavOffcanvasLabel">Mobilna Navigacija</h5>
+    <button type="button" class="btn-close btn-lg bg-light" data-bs-dismiss="offcanvas" aria-label="Zatvori"></button>
+  </div>
+  <div class="offcanvas-body">
+    <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+    <hr class="rounded">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Početna</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'lista_preplata' %}"><i class="fa-solid fa-receipt"></i> Preplate</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'balance' %}"><i class="fa-solid fa-wallet"></i> Novčanik</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'podrska' %}"><i class="fa-solid fa-comments"></i> Podrška</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'postavke' %}"><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'odjava' %}"><i class="fa-solid fa-right-from-bracket"></i> Odjava</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<style>
+  .navbar-nav .nav-link {
+    color: #f8f9fa; /* Boja teksta */
+    font-size: 1.2rem; /* Povećanje veličine fonta */
+    margin-bottom: 40px; /* Dodajte još veći razmak između stavki */
+  }
+
+  .navbar-toggler {
+    margin-left: 25px; /* Dodajte marginu s lijeve strane ikone */
+  }
+  
+  /* Stilizacija ikona u linkovima */
+  .navbar-nav .nav-link i {
+    font-size: 1.5rem; /* Povećanje veličine ikona */
+    margin-right: 10px; /* Dodajte razmak između ikona i teksta */
+  }
+  
+  /* Stilizacija offcanvas panela */
+  .offcanvas {
+    position: absolute;
+    top: 0;
+    left: -100%; /* Pomaknite panel izvan ekrana */
+    width: 70%; /* Prilagodite širinu prema svojim preferencijama */
+    background-color: #212529; /* Tamna pozadina za tijelo panela */
+    box-shadow: none; /* Uklonite sjenu panela */
+    transition: left 0.3s ease-in-out; /* Dodajte animaciju pri otvaranju */
+  }
+  .offcanvas.show {
+    left: 0; /* Prikazivanje panela */
+  }
+
+  hr.rounded {
+    border-top: 8px solid #bbb;
+    border-radius: 5px;
+  }
+</style>
+
+
+<div class="col-12 col-md py-4">
+  <div class="container">
+      <h1 class="mb-5">{{ request.postavke.novcanik_heading }}</h1>
+      <div class="row d-flex align-items-stretch"> <!-- Dodane klase 'd-flex' i 'align-items-stretch' -->
+
+        <!-- User Info Column -->
+        <div class="col-md-6 mb-4 d-flex">
+          <div class="card p-4 shadow-sm border-0 flex-fill bg-white">
+            <h3 class='mb-4'><i class="fa-solid fa-user me-2 text-muted"></i>{{ request.postavke.novcanik_informacije_heder }}</h3>
+            {% if ime %}
+            <p class="mb-2"><strong>Ime:</strong> {{ ime }}</p>
+            {% endif %}
+            {% if prezime %}
+            <p class="mb-2"><strong>Prezime:</strong> {{ prezime }}</p>
+            {% endif %}
+            {% if user_profile.korisnik.email %}
+            <p class="mb-2"><strong>Email:</strong> {{ user_profile.korisnik.email }}</p>
+            {% endif %}
+            {% if telefon %}
+            <p class="mb-2"><strong>Telefon:</strong> {{ telefon }}</p>
+            {% endif %}
+            {% if balance %}
+            <p class="mb-2"><strong>Novčanik:</strong> {{ balance }} €</p>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Payment Column -->
+        <div class="col-md-6 d-flex">
+          <div class="card p-4 shadow-sm border-0 flex-fill bg-white">
+            <h3 class="mb-4"><i class="fa-solid fa-wallet me-2 text-muted"></i>{{ request.postavke.novcanik_napodplati_novcanik_header }}</h3>
+            <form id="payment-form" method="post" action="{% url 'paypal_payment' %}" class="mb-3">
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="amount" class="form-label">{{ request.postavke.novcanik_nadoplati_novcanik_opis }}</label>
+                <input type="number" class="form-control" id="amount" name="amount" min="1" step="0.01">
+              </div>
+              <button type="submit" class="btn btn-outline-secondary w-100"> <i class="fa-solid fa-plus"></i> Uplati</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const paymentForm = document.getElementById('payment-form');
+
+    paymentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(paymentForm);
+      fetch("{% url 'paypal_payment' %}", {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': "{{ csrf_token }}"
+        },
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.status === "success") {
+          window.location.href = data.approval_url;
+        } else {
+          alert('Došlo je do greške: ' + data.error);
+        }
+      });
+    });
+  });
+
+
+</script>
+
+{% if messages %}
+<div class="row">
+  <div class="col-md-12">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}

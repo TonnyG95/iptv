@@ -1,0 +1,6 @@
+.custom-logout {
+    position: absolute;
+    bottom: 20%; /* Ovo će postaviti dugme na 80% visine sa dna */
+    width: 100%;
+  }
+  

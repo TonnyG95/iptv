@@ -1,0 +1,314 @@
+<div class="row bg-light">
+   <aside class="col-12 col-md-2 bg-dark py-2 d-none d-md-block" style="height: 100vh;">
+      <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+      <h5 class="text-light text-center mt-3">Dobro Dosli {{ global_user_profile.ime }}!</h5>
+      <div class="nav flex-column nav-pills mt-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+         <a
+            class="nav-link text-light my-2 active"
+            href="{% url 'dashboard' %}"
+            ><i class="fa-solid fa-house"></i> Pocetna</a>
+         <a
+            class="nav-link text-light my-2  "
+            id="v-pills-profile-tab"
+            href="{% url 'lista_preplata' %}"
+            ><i class="fa-solid fa-receipt"></i> Preplate</a>
+         <a
+            class="nav-link text-light my-2 "
+            href="{% url 'balance' %}"
+            ><i class="fa-solid fa-wallet"></i> Novčanik</a>
+         <a
+            class="nav-link text-light my-2"
+            href="{% url 'podrska' %}"
+            ><i class="fa-solid fa-comments"></i> Podrska</a>
+         <a
+            class="nav-link text-light my-2"
+            href="{% url 'postavke' %}"
+            ><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+         <a class="nav-link text-light my-2" href="{% url 'odjava' %}">
+         <i class="fa-solid fa-right-from-bracket"></i> Odjava
+         </a>
+      </div>
+   </aside>
+   <!-- Mobile Navigation (Navbar) -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-light d-block d-md-none">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNavOffcanvas" aria-controls="mobileNavOffcanvas">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+   </nav>
+   <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileNavOffcanvas" aria-labelledby="mobileNavOffcanvasLabel">
+      <div class="offcanvas-header">
+         <h5 class="offcanvas-title" id="mobileNavOffcanvasLabel">Mobilna Navigacija</h5>
+         <button type="button" class="btn-close btn-lg bg-light" data-bs-dismiss="offcanvas" aria-label="Zatvori"></button>
+      </div>
+      <div class="offcanvas-body">
+         <img class="img-thumbnail img-fluid" src="{{ request.white_logo }}" alt="IPTV4U World Logo">
+         <hr class="rounded">
+         <ul class="navbar-nav">
+            <li class="nav-item active">
+               <a class="nav-link" href="{% url 'dashboard' %}"><i class="fa-solid fa-house"></i> Početna</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'lista_preplata' %}"><i class="fa-solid fa-receipt"></i> Preplate</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'balance' %}"><i class="fa-solid fa-wallet"></i> Novčanik</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'podrska' %}"><i class="fa-solid fa-comments"></i> Podrška</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'postavke' %}"><i class="fa-solid fa-gear"></i> Postavke Profila</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="{% url 'odjava' %}"><i class="fa-solid fa-right-from-bracket"></i> Odjava</a>
+            </li>
+         </ul>
+      </div>
+   </div>
+   <style>
+      .navbar-nav .nav-link {
+      color: #f8f9fa; /* Boja teksta */
+      font-size: 1.2rem; /* Povećanje veličine fonta */
+      margin-bottom: 40px; /* Dodajte još veći razmak između stavki */
+      }
+      .navbar-toggler {
+      margin-left: 25px; /* Dodajte marginu s lijeve strane ikone */
+      }
+      /* Stilizacija ikona u linkovima */
+      .navbar-nav .nav-link i {
+      font-size: 1.5rem; /* Povećanje veličine ikona */
+      margin-right: 10px; /* Dodajte razmak između ikona i teksta */
+      }
+      /* Stilizacija offcanvas panela */
+      .offcanvas {
+      position: absolute;
+      top: 0;
+      left: -100%; /* Pomaknite panel izvan ekrana */
+      width: 70%; /* Prilagodite širinu prema svojim preferencijama */
+      background-color: #212529; /* Tamna pozadina za tijelo panela */
+      box-shadow: none; /* Uklonite sjenu panela */
+      transition: left 0.3s ease-in-out; /* Dodajte animaciju pri otvaranju */
+      }
+      .offcanvas.show {
+      left: 0; /* Prikazivanje panela */
+      }
+      hr.rounded {
+      border-top: 8px solid #bbb;
+      border-radius: 5px;
+      }
+      /* animacija */
+      .custom-alert {
+      background-color: #fff3cd;  
+      border-color: #ffeeba;     
+      color: #856404;           
+      border-radius: 20px;
+      }
+      .animated-icon i {
+      animation: shake 2s infinite;
+      }
+      @keyframes shake {
+      0% { transform: rotate(0deg); }
+      10% { transform: rotate(15deg); }
+      20% { transform: rotate(-15deg); }
+      30% { transform: rotate(15deg); }
+      40% { transform: rotate(-15deg); }
+      100% { transform: rotate(0deg); }
+      }
+      .shake {
+      animation: shake-button 1s infinite;
+      }
+      @keyframes shake-button {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-3px); }
+      50% { transform: translateX(3px); }
+      75% { transform: translateX(-3px); }
+      }
+
+   </style>
+   <div class="col-12 col-md py-4 my-custom-padding">
+      <h5 class="text-center text-muted mt-5">{{ request.postavke.dashboard_pocetna_header }}</h5>
+      <h1 class="text-center mt-3">
+         <strong>Pozdrav {{ global_user_profile.ime }}!</strong>
+      </h1>
+      <p class="text-muted text-center mt-2">
+         {{ request.postavke.dashboard_pocetna_opis }}
+      </p>
+      <div class="d-flex justify-content-center mt-4">
+         <!-- Smanjena širina kartica -->
+         <div class="row w-75 d-flex align-items-stretch">
+            <!-- Balans Card -->
+            <div class="col-md-4 mb-4">
+               <div class="card shadow-sm border-0 h-100">
+                  <h5 class="card-header bg-secondary text-light">{{ request.postavke.pocetna_kartica_balans_card_header }}</h5>
+                  <div class="card-body d-flex flex-column justify-content-between">
+                     <h6 class="card-title">{{ request.postavke.pocetna_kartica_balans_opis }}</h6>
+                     <p class="card-text">Trenutni balans: {{ korisnicki_balans }} €</p>
+                     <a href="{% url 'balance' %}" class="btn btn-outline-primary mt-3">Novčanik</a>
+                  </div>
+               </div>
+            </div>
+            <!-- Aktivne Usluge Card -->
+            <div class="col-md-4 mb-4">
+               <div class="card shadow-sm border-0 h-100">
+                  <h5 class="card-header bg-secondary text-light">{{ request.postavke.pocetna_kartica_aktivne_usluge_card_header }}</h5>
+                  <div class="card-body d-flex flex-column justify-content-between">
+                     <h6 class="card-title">{{ request.postavke.pocetna_kartica_aktivne_usluge_opis }}</h6>
+                     <p class="card-text">Broj aktivnih preplata: {{ broj_aktivnih_preplata }}</p>
+                     <a href="{% url 'kupi_pretplatu' %}" class="btn btn-outline-primary mt-3">Upravljanje</a> 
+                  </div>
+               </div>
+            </div>
+            <!-- Usluge koje ističu Card -->
+            <div class="col-md-4 mb-4">
+               <div class="card shadow-sm border-0 h-100">
+                  <h5 class="card-header bg-secondary text-light">{{ request.postavke.pocetna_kartica_usluge_koje_isticu_card_header }}</h5>
+                  <div class="card-body d-flex flex-column justify-content-between">
+                     <h6 class="card-title">{{ request.postavke.pocetna_kartica_usluge_koje_isticu_opis }}</h6>
+                     <ul class="list-group list-group-flush">
+                        {% if uskoro_istice %}
+                        {% for user_subscription in uskoro_istice %}
+                        <li class="list-group-item bg-light">
+                           <strong>Pretplata:</strong> {{ user_subscription.pretplata.naziv }}<br>
+                           <strong>Datum isteka:</strong> {{ user_subscription.datum_isteka|date:"d.m.Y" }}
+                        </li>
+                        {% endfor %}
+                        {% else %}
+                        <li class="list-group-item bg-light">Nema usluga koje ističu.</li>
+                        {% endif %}
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container my-4">
+         <div class="row d-flex align-items-stretch">
+            <!-- Subscription Information -->
+            <div class="col-md-6 flex-grow-1">
+               {% if display_mag %}
+               <div class="alert custom-alert {% if user_subscription.is_mag_active %}bg-success{% else %}bg-danger{% endif %} text-white rounded-lg p-4 h-100">
+                   <div class="text-center">
+                       <div class="animated-icon mb-2">
+                           <i class="fas fa-tv fa-3x"></i>
+                       </div>
+                       <h5 class="alert-heading mb-3">Podatci za MAG</h5>
+                       <p id="mag_model" data-copy="{{ user_subscription.mag_model }}" class="mb-2">Model: {{ user_subscription.mag_model }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('mag_model')"></i></p>
+                       <p id="mag_mac" data-copy="{{ user_subscription.mag_mac }}" class="mb-2">MAC: {{ user_subscription.mag_mac }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('mag_mac')"></i></p>
+                       <p id="mag_sn" data-copy="{{ user_subscription.mag_sn }}" class="mb-2">SN: {{ user_subscription.mag_sn }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('mag_sn')"></i></p>
+                       <p id="mag_status" data-copy="{{ user_subscription.is_mag_active|yesno:'Aktivno,Neaktivno' }}" class="mb-2">Status: {{ user_subscription.is_mag_active|yesno:"Aktivno,Neaktivno" }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('mag_status')"></i></p>
+                   </div>
+               </div>
+               {% elif not display_mag and user_profile.is_m3u_active %}
+               <div class="alert custom-alert {% if user_profile.is_m3u_active %}bg-success{% else %}bg-danger{% endif %} text-white rounded-lg p-4 h-100">
+                   <div class="text-center">
+                       <div class="animated-icon mb-2">
+                           <i class="fas fa-lock fa-3x"></i>
+                       </div>
+                       <h5 class="alert-heading mb-3">Podatci za prijavu</h5>
+                       <p id="m3u_name" data-copy="TV4U" class="mb-2">Naziv: TV4U <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('m3u_name')"></i></p>
+                       <p id="m3u_username" data-copy="{{ user_profile.m3u_username }}" class="mb-2">Username: {{ user_profile.m3u_username }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('m3u_username')"></i></p>
+                       <p id="m3u_password" data-copy="{{ user_profile.m3u_password }}" class="mb-2">Password: {{ user_profile.m3u_password }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('m3u_password')"></i></p>
+                       <p id="m3u_link" data-copy="{{ user_profile.m3u_link }}" class="mb-2">Link: {{ user_profile.m3u_link }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('m3u_link')"></i></p>
+                       <p id="m3u_status" data-copy="{{ user_profile.is_m3u_active|yesno:'Aktivno,Neaktivno' }}" class="mb-2">Status: {{ user_profile.is_m3u_active|yesno:"Aktivno,Neaktivno" }} <i class="fas fa-copy copy-icon" data-toggle="tooltip" title="Kopiraj" onclick="copyToClipboard('m3u_status')"></i></p>
+                   </div>
+               </div>
+               {% else %}
+               <div class="alert custom-alert bg-warning text-white rounded-lg p-4 h-100">
+                   <div class="text-center">
+                       <div class="animated-icon mb-2">
+                           <i class="fas fa-exclamation-triangle fa-3x"></i>
+                       </div>
+                       <h5 class="alert-heading mb-3">Nema aktivnih preplata</h5>
+                       <p class="mb-2">Molimo vas da provjerite vašu pretplatu.</p>
+                   </div>
+               </div>
+               {% endif %}
+           </div>
+           
+
+            <!-- Internet Speed Check -->
+            <div class="col-md-6 flex-shrink-1">
+               <div class="card h-100">
+                   <div class="card-header bg-primary text-white">
+                       <h5 class="mb-0">Korisni Linkovi</h5>
+                   </div>
+                   <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                       <a class='btn btn-lg btn-primary mb-3' href="https://tv4uworld.com/faqs/" target="_blank">
+                           <i class="fa-solid fa-question"></i> FAQ
+                       </a>
+                       <a class='btn btn-lg btn-primary mb-3' href="https://tv4uworld.com/services/smart-tv/" target="_blank">
+                           <i class="fa-solid fa-tablet-screen-button"></i> Kompatibilni uređaji
+                       </a>
+                       <a class='btn btn-lg btn-primary' href="https://tv4uworld.com/mjerenje-brzine/" target="_blank">
+                           <i class="fa-solid fa-gauge"></i> Provjera brzine interneta
+                       </a>
+                   </div>
+               </div>
+           </div>
+           
+           
+           
+         </div>
+         {% if announcements %}
+         <div class="container my-4">
+            {% for announcement in announcements %}
+            <div class="alert custom-alert rounded p-4" role="alert">
+               <div class="row align-items-center">
+                  <div class="col-2 text-center">
+                     <div class="animated-icon">
+                        <i class="fas fa-exclamation-circle fa-3x"></i>
+                     </div>
+                  </div>
+                  <div class="col-8">
+                     <h4 class="alert-heading mb-1 text-danger">{{ announcement.title }}</h4>
+                     <p class="mb-0">{{ announcement.message }}</p>
+                  </div>
+                  <div class="col-2 text-end">
+                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+         {% endif %}
+      </div>
+   </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Initialize Bootstrap tooltip
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+function copyToClipboard(elementId) {
+    var element = document.getElementById(elementId);
+    if (element) {
+        var textToCopy = element.getAttribute('data-copy');  // Fetching the data to be copied from the data-copy attribute
+        if (textToCopy) {
+            var textArea = document.createElement("textarea");
+            textArea.value = textToCopy;  // Using the data from data-copy attribute
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+
+            // Reset all tooltips
+            $('[data-toggle="tooltip"]').tooltip('hide')
+            .attr('data-original-title', 'Kopiraj');
+
+            // Update tooltip title only for the clicked element
+            $('#' + elementId + ' .copy-icon').tooltip('hide')
+            .attr('data-original-title', 'Kopirano!')
+            .tooltip('show');
+        } else {
+            console.error('Attribute data-copy is not set for element:', elementId);
+        }
+    } else {
+        console.error('Element not found:', elementId);
+    }
+}
+
+</script>
+

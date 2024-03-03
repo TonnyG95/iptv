@@ -35,9 +35,16 @@ os.environ["RECAPTCHA_PRIVATE_KEY"] = "Your recaptcha Secret"
 os.environ['PAYPAL_CLIENT_ID'] = 'Your PayPal live business Account Client ID'
 os.environ['PAYPAL_SECRET_KEY'] = 'Your PayPal live business Account Secret Key'
 
+"""
+Ako zelis koristi sandbox za testiranje unesi svoje PayPal Account Client ID i Secret Key i ukloni komentare
+ispred linija gdje su sandbox vrijednosti, a ako zelis koristi live PayPal Account Client ID i Secret Key
+onda dodaj komentare koji je # ispred linija gdje su live vrijednosti 
+
+"""
+
 # PayPal Sendbox
-os.environ['PAYPAL_CLIENT_ID'] = 'Your PayPal sendbox business Account Client ID'
-os.environ['PAYPAL_SECRET_KEY'] = 'Your PayPal sendbox business Account Secret Key'
+# os.environ['PAYPAL_CLIENT_ID'] = 'Your PayPal sendbox business Account Client ID' 
+# os.environ['PAYPAL_SECRET_KEY'] = 'Your PayPal sendbox business Account Secret Key'
 
 
 # Email Settings

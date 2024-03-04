@@ -401,10 +401,9 @@ Amazon S3 -> BucketName -> Permissions
 
 ## Kako Pokrenuti Aplikaciju Lokalno?
 
-Da biste ovu aplikaciju pokrenuli lokalno, prvo je potrebno da imate instaliran Python i VSCode ili bilo koji drugi IDE. Ja preferiram VSCode. Prije nego što aplikaciju pokrenete lokalno, **pobrinite se da prvo kreirate S3 bucket** jer će to biti neophodno da aplikacija učita statičke datoteke. Takođe, **pobrinite se da ste `example.env.py` preimenovali u `env.py`** i da ste promjenili vrednosti unutar `env.py` datoteke, jer bez toga aplikacija neće raditi. Ovo **isto morate uraditi pre nego što deployujete aplikaciju na Elastic Beanstalk**.
+Da biste ovu aplikaciju pokrenuli lokalno, prvo je potrebno da imate instaliran Python i VSCode ili bilo koji drugi IDE. Ja preferiram VSCode. Prije nego što aplikaciju pokrenete lokalno, **pobrinite se da prvo kreirate S3 bucket** jer će to biti neophodno za učitavanje statičkih datoteka aplikacije. Također, **pobrinite se da ste `example.env.py` preimenovali u `env.py`** i da ste ažurirali vrijednosti unutar `env.py` datoteke, jer bez toga aplikacija neće raditi. Ovo **isto morate uraditi prije nego što deployujete aplikaciju na Elastic Beanstalk**.
 
-Nakon toga, možete desnim klikom na folder gde se nalazi aplikacija odabrati "Open With Code" (u slučaju VSCode-a). Kada otvorite aplikaciju u code editoru, otvorite terminal. VSCode ima ugrađeni terminal, stoga možete jednostavno otići u gornjoj navigaciji bar gdje se nalaze opcije kao što su File, Edit, itd., pronaći opciju "Terminal", i kliknuti na "New Terminal". Zatim, u terminalu unesite sledeće komande, jednu po jednu:
-
+Nakon toga, možete desnim klikom na folder gdje se nalazi aplikacija odabrati "Open With Code" (u slučaju korištenja VSCode-a). Kada otvorite aplikaciju u code editoru, otvorite terminal. VSCode ima ugrađeni terminal, stoga možete jednostavno otići u gornji navigacijski bar gdje se nalaze opcije kao što su File, Edit, itd., pronaći opciju "Terminal", i kliknuti na "New Terminal". Zatim, u terminalu unesite sljedeće komande, jednu po jednu:
 
 ```
 pip install -r requirements.txt

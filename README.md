@@ -8,6 +8,51 @@ Ovaj projekt razvijen je kako bi olakšao i automatizirao upravljanje IPTV uslug
 
 ![smartmockups_ltaujkbk](https://github.com/TonnyG95/iptv/assets/47572512/731b1ef4-cded-4bca-850f-591f4e8795cb)
 
+# Sadržaj
+
+- [O projektu](#o-projektu)
+- [Ključne značajke](#ključne-značajke)
+  - [Automatizacija Korisničkog Računa](#automatizacija-korisničkog-računa)
+  - [Financijske Transakcije i PayPal Integracija](#financijske-transakcije-i-paypal-integracija)
+  - [Napredni Admin Panel](#napredni-admin-panel)
+  - [Sigurnost i Prilagodljivost](#sigurnost-i-prilagodljivost)
+- [Tehnologije](#tehnologije)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+  - [Payment procesori](#payment-procesori)
+  - [Sigurnost](#sigurnost)
+  - [AWS Infrastruktura](#aws-infrastruktura)
+- [Automatizirane Obavijesti](#automatizirane-obavijesti)
+  - [Kontakt Forma](#kontakt-forma)
+  - [Obavijest o kupnji usluge](#obavijest-o-kupnji-usluge)
+  - [Obavijest o produživanju usluge](#obavijest-o-produživanju-usluge)
+  - [Obavijest o isteku usluge](#obavijest-o-isteku-usluge)
+  - [Obavijest o gašenju usluge](#obavijest-o-gašenju-usluge)
+  - [Obavijest korisniku o kupnji ili produžetku usluge](#obavijest-korisniku-o-kupnji-ili-produžetku-usluge)
+  - [Obavijest korisniku da mu usluga ističe za 5 dana](#obavijest-korisniku-da-mu-usluga-ističe-za-5-dana)
+  - [Obavijest korisniku o isteku usluge](#obavijest-korisniku-o-isteku-usluge)
+  - [Obavijest o gašenju usluge](#obavijest-o-gašenju-usluge-1)
+  - [Obavijest o nadoplati novčanika](#obavijest-o-nadoplati-novčanika)
+  - [Ostale obavijesti](#ostale-obavijesti)
+- [Admin Panel](#admin-panel)
+  - [Brandiranje](#brandiranje)
+  - [Upravljanje Pretplatama](#upravljanje-pretplatama)
+  - [Upravljanje Korisnicima](#upravljanje-korisnicima)
+  - [Upravljanje Novčanicima](#upravljanje-novčanicima)
+- [Obavijesti](#obavijesti)
+- [Planovi Za Aplikaciju](#planovi-za-aplikaciju)
+- [Cron Jobs](#cron-jobs)
+- [Deployment na AWS](#deployment-na-aws)
+- [Cron Jobs Workaround](#cron-jobs-workaround)
+- [Kreiranje Cron Job-a](#kreiranje-cron-job-a)
+- [Kreiranje Elastic Beanstalk aplikacije](#kreiranje-elastic-beanstalk-aplikacije)
+- [Kreiranje S3 Bucketa](#kreiranje-s3-bucketa)
+- [Code Potreban Za S3 Bucket](#code-potreban-za-s3-bucket)
+- [Kako Pokrenuti Aplikaciju Lokalno?](#kako-pokrenuti-aplikaciju-lokalno)
+- [Podatci za prijavu](#podatci-za-prijavu)
+- [Zaključak](#zaključak)
+
+
 ## Ključne značajke
 
 ### Automatizacija Korisničkog Računa

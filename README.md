@@ -55,7 +55,7 @@ Ova aplikacija je integrirana s Google reCAPTCHA sigurnosnim mehanizmom kako bi 
 
 ### AWS Infrastruktura
 
-Ova aplikacija je u startu kreirana s fokusom na sigurnost, pouzdanost i skalabilnost, tako da od početka rada na ovoj aplikaciji smo kolega s kojim sam radio ovu aplikaciju i ja odlučili da ju integriramo s što je više moguće AWS (Amazon Web Services) funkcionalnosti jer smo od starta znali da ćemo ju deployati na AWS. Tako da ova aplikacija je u potpunosti optimizirana za deployment na usluzi **Elastic Beanstalk** i isto tako je u potpunosti optimizirana i za korištenje **AWS S3 (Simple Storage Service)** tako da sve statične datoteke kao što su slike, JavaScript i CSS datoteke koriste S3 za skladištenje i tako se smanjuje latencija i povećava skalabilnost ove aplikacije.
+Ova aplikacija je u startu kreirana s fokusom na sigurnost, pouzdanost i skalabilnost, tako da od početka rada na ovoj aplikaciji smo kolega kojem sam radio ovu aplikaciju i ja odlučili da ju integriramo s što je više moguće AWS (Amazon Web Services) funkcionalnosti jer smo od starta znali da ćemo ju deployati na AWS. Tako da ova aplikacija je u potpunosti optimizirana za deployment na usluzi **Elastic Beanstalk** i isto tako je u potpunosti optimizirana i za korištenje **AWS S3 (Simple Storage Service)** tako da sve statične datoteke kao što su slike, JavaScript i CSS datoteke koriste S3 za skladištenje i tako se smanjuje latencija i povećava skalabilnost ove aplikacije.
 
 
 ## Automatizirane Obavijesti
@@ -108,7 +108,7 @@ Isto tako, korisnik će biti obaviješten putem e-maila na dan kad mu je usluga 
 
 ### Obavijest o gašenju usluge
 
-Ukoliko je prošlo 5 dana od isteka usluge i korisnik nije produžio uslugu, aplikacija će mu poslati e-mail da je usluga ugašena i da mu je potrebno da je produži ponovo ukoliko ju želi koristiti, isto tako odmah će i admin biti obaviješten da treba tom korisniku ugasiti uslugu.
+Ukoliko je prošlo 5 dana od isteka usluge i korisnik nije produžio uslugu, aplikacija će mu poslati e-mail da je usluga ugašena i je potrebno da je kupi ponovo ukoliko ju želi koristiti, isto tako odmah će i admin biti obaviješten da treba korisniku ugasiti uslugu.
 
 ### Obavijest o nadoplati novčanika
 
@@ -116,7 +116,7 @@ Naravno, bitna obavijest je i potvrdni e-mail koji se šalje korisniku kad je na
 
 ### Ostale obavijesti
 
-Sve ove gore navedene obavijesti nisu jedine. Tu su još obavijesti vezano za zahvalu korisniku za produživanje usluge, aktivacijski e-mail nakon kreiranja računa. Tu je naravno i 2FA koji je u ovoj verziji isključen pošto je aplikacija u toku razvoja bila za vrijeme kreiranja ove dokumentacije.
+Sve ove gore navedene obavijesti nisu jedine. Tu su još obavijesti za zahvalu korisniku za produživanje usluge, aktivacijski e-mail nakon kreiranja računa i e-mail koji se šalje korisniku kad je aktivirao svoj račun.
 
 ## Admin Panel
 
@@ -124,25 +124,25 @@ Ova aplikacija ima robustan Admin panel koji adminu omogućava upravljanje kompl
 
 ### Brandiranje
 
-Najvažnije za svakog admina je da platformu može prilagoditi svom brandu. Ovo je moguće u admin panelu. Admin može postaviti svoj logo u 2 verzije: klasičan i svijetli, pošto je bila u planu implementacija dark moda, ali taj dio nije uključen u ovoj verziji. Tu su i mogućnosti za linkove do društvenih mreža koje se prikazuju kroz cijelu aplikaciju, uključujući i e-mail obavijesti. Osim toga, admin može dodati i custom linkove ako želi, npr. linkovi do njegove web stranice, politike privatnosti i uvjeta korištenja. Par screenshotova će biti prikazano ovdje.
+Najvažnije za svakog admina je da platformu može prilagoditi svom brandu. Ovo je moguće u admin panelu. Admin može postaviti svoj logo u 2 verzije: klasičan i svijetli, pošto je bila u planu implementacija dark moda, ali taj dio nije uključen u ovoj verziji. Tu su i mogućnosti za linkove do društvenih mreža koje se prikazuju kroz cijelu aplikaciju, uključujući i e-mail obavijesti. Osim toga, admin može dodati i custom linkove ako želi, npr. linkovi do njegove web stranice, politike privatnosti i uvjeta korištenja. Par screenshotova će biti prikazano ovdje, Isto tako kompletan branding se koristi i u e-mail obavjestima.
 
-1. Glavne postavke
+1. **Glavne postavke**
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/e238b260-0c00-49b5-b04c-def3f7df9b62)
 
-2. Postavke društvenih mreža
+2. **Postavke društvenih mreža**
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/de947a2d-6b10-4da3-b48f-cd48aae87ff5)
 
-3. Frontend tekstovi
+3. **Frontend tekstovi**
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/86ca625f-80e6-4480-9007-5fac88e3ebf2)
 
-4. Kartice na početnoj stranici
+4. **Kartice na početnoj stranici**
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/9f399a1f-90cb-4c6e-ac1b-aaeca5dba4ba)
 
-5. Linkovi specifični za e-mail obavijesti
+5. **Linkovi specifični za e-mail obavijesti**
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/9ed3dfdd-e2be-40d1-9a77-5ace2c59b442)
 
@@ -158,13 +158,13 @@ Naravno, najvažnija opcija je upravljanje planovima za pretplatu, to uključuje
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/9b94870e-2958-46f6-8535-d13451a60576)
 
-Opcije kao što su:
+Opcije:
 
-- Korisnik obaviješten o isteku
-- Admin obaviješten o isteku
-- Korisnik obaviješten o prekidu usluge
+- **Korisnik obaviješten o isteku**
+- **Admin obaviješten o isteku**
+- **Korisnik obaviješten o prekidu usluge**
 
-Su namijenjene za automatizaciju obavijesti tako izbjegavamo da svaki dan šaljemo obavijest korisniku, tako da kad se korisnik obavijesti ta polja će se automatski uključiti ili isključiti tako da se korisniku ne zatrpava inbox s istim e-mailovima. Kao što imena kažu, ukoliko admin želi manualno obavijestiti korisnika o isteku usluge, može samo kliknuti na checkboxove i to će pokrenuti slanje e-mail obavijesti korisniku. Ali u većini slučajeva te opcije admin nikad neće koristiti jer to će aplikacija sama regulirati. Opcije kao checkbox za "Is MAG Active" će isto biti automatizirane i ako je checkbox uključen to će korisniku odmah biti prikazano na početnoj stranici dashboarda. Ukoliko korisnik koristi M3U uslugu, iste postavke za korisnika se mogu pronaći u "User Profiles", ne u "Subscriptions", pošto je M3U povezan s profilom korisnika jer će automatski kreirati nove M3U podatke čim se korisnik registira na web stranicu.
+Ove opcije su namijenjene za automatizaciju obavijesti tako izbjegavamo da svaki dan šaljemo obavijest korisniku, tako da kad se korisnika obavijesti ta polja će se automatski uključiti a nakon produživanja usluge te opcije će se automatski isključiti, tako da se korisniku ne zatrpava inbox s istim e-mailovima što će ujedno i sprječiti da vaše poruke budu označene kao spam. Kao što imena kažu, ukoliko admin želi ručno obavijestiti korisnika o isteku usluge, može samo kliknuti na checkboxove i to će pokrenuti slanje e-mail obavijesti korisniku. Ali u većini slučajeva te opcije admin nikad neće koristiti jer to će aplikacija sama regulirati. Opcije kao checkbox za "Is MAG Active" će isto biti automatizirane i ako je checkbox uključen to će korisniku odmah biti prikazano na početnoj stranici dashboarda. Ukoliko korisnik koristi M3U uslugu, iste postavke za korisnika se mogu pronaći u "User Profiles", ne u "Subscriptions", pošto je M3U povezan s profilom korisnika jer će automatski kreirati nove M3U podatke čim se korisnik registira na web stranicu.
 
 **Admin -> Subscriptions**
 
@@ -185,8 +185,7 @@ Kao što sam gore naveo, admin može upravljati korisnicima. Aplikacija će auto
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/7cf07988-d9cb-41ee-9171-cca836e1999f)
 
-Kao što se vidi na screenshotu, u admin panelu postoji i **Users** u vrhu izbornika. Ta sekcija dashboarda je samo za upravljanje glavnim podacima korisnika kao što su e-mail i lozinka, ime i prezime korisnika. Isto tako, tamo se mogu pronaći i postavke **Permissions** gdje se korisniku mogu dodijeliti određene dozvole, dodavati statuse kao što su **Staff** ili **Admin**. Ali osim toga, u toj sekciji se neće ništa raditi vezano za upravljanje klijentima i pretplatama, ali isto je bitno napomenuti ukoliko admin želi dodati još admina ili svoje resellere ili kombinaciju svega. Kreativnost admina je jedina limitacija ove aplikacije i to su sve opcije koje su moguće samo zbog odabira Djang
-a kao glavnog frameworka za ovu aplikaciju.
+Kao što se vidi na screenshotu, u admin panelu postoji i **Users** u vrhu izbornika. Ta sekcija dashboarda je samo za upravljanje glavnim podacima korisnika kao što su e-mail i lozinka, ime i prezime korisnika. Isto tako, također tamo se mogu pronaći i postavke **Permissions** gdje se korisniku mogu dodijeliti određene dozvole, dodavati statuse kao što su **Staff** ili **Admin**. Ali osim toga, u toj sekciji se neće ništa raditi vezano za upravljanje klijentima i pretplatama, ali isto je bitno napomenuti ukoliko admin želi dodati još admina ili svoje resellere ili kombinaciju svega može to brzo i jednostavno odraditi u toj sekciji, ukratko kreativnost admina je jedina limitacija ove aplikacije i to su sve opcije koje su moguće samo zbog odabira Djanga kao glavnog frameworka za ovu aplikaciju.
 
 ![Screenshot_2024-03-03_21-38-51](https://github.com/TonnyG95/iptv/assets/47572512/13985748-23e2-4109-bc98-76ef459b3744)
 
@@ -204,7 +203,7 @@ Nakon što se korisnik registrira na aplikaciju, njemu će automatski biti kreir
 
 ## Obavijesti
 
-Kao i svaka aplikacija, admin mora imati mogućnost da kreira obavijest koja će biti prikazana svim korisnicima aplikacije. Ja sam ovdje to odlučio napraviti kao **Announcements** funkciju koja će biti prikazana svim korisnicima direktno na početnoj stranici aplikacije, kao što se može vidjeti na screenshotu. Za svaku obavijest imamo opciju.
+Kao i svaka aplikacija, admin mora imati mogućnost da kreira obavijest koja će biti prikazana svim korisnicima aplikacije. Ja sam ovdje to odlučio napraviti kao **Announcements** funkciju koja će biti prikazana svim korisnicima direktno na početnoj stranici aplikacije, kao što se može vidjeti na screenshotu. Za svaku obavijest imamo opciju da dodamo početni datum prikazivanja obavjesti isto tako admin ima opciju da odabere do kojeg datuma će se ta obavjesti prikazivati, i po isteku obavijest će se automatski prestati prikazivati korisnicima.
 
 **Admin -> Announcements**
 
@@ -216,8 +215,7 @@ Kao i svaka aplikacija, admin mora imati mogućnost da kreira obavijest koja će
 
 ## Planovi Za Aplikaciju
 
-Kao što sam spomen
-uo, ova aplikacija je otkazana jer se kolegi platforma nije svidjela, tako da **ova aplikacija je u stanju kakvom je. Ako bude interesa, možda ću odraditi još koji update za aplikaciju, ali razvoj ove aplikacije je završen prije više od godinu dana i ostala je u ovom stanju do sad**. Iako smo planirali odraditi i frontend na **ReactJS-u** i backend na **Django Rest Frameworku**, nažalost to se neće desiti. Ja sam na ovoj aplikaciji krenuo raditi API tako da **postoji već kod za API** koji se već može koristiti, ali je daleko od završenog. Ako se dobro sjećam, samo je napravljen API endpoint za registraciju i prijavu, ali nisam siguran pošto je prošlo preko godinu i pol dana, ako ne i 2 godine, otkako sam zadnji put radio na ovoj aplikaciji. Daljnji planovi su bili integrirati i 2FA (Two-factor authentication) i bio je u planu da se odradi kompletan dark mode, ali nažalost pošto je on odustao od ove aplikacije i to u relativno ranoj verziji, ovo što možete vidjeti ovdje je odrađeno kroz tjedan dana.
+Kao što sam spomenuo, ova aplikacija je otkazana jer se kolegi platforma nije svidjela, tako da **ova aplikacija je u stanju kakvom je. Ako bude interesa, možda ću odraditi još koji update za aplikaciju, ali razvoj ove aplikacije je završen prije više od godinu dana i ostala je u ovom stanju**. Iako smo planirali odraditi i frontend sa **ReactJS-u** i **Django Rest Frameworku**, nažalost to se neće desiti. Ja sam na ovoj aplikaciji krenuo raditi API tako da **postoji već kod za API** koji se već može koristiti, ali je daleko od završenog. Ako se dobro sjećam, samo je napravljen API endpoint za registraciju i prijavu, ali nisam siguran pošto je prošlo preko godinu i pol dana, ako ne i 2 godine, otkako sam zadnji put radio na ovoj aplikaciji. Daljnji planovi su bili integrirati i 2FA (Two-factor authentication) i bio je u planu da se odradi kompletan dark mode, ali nažalost pošto je on odustao od ove aplikacije i to u relativno ranoj verziji, ovo što možete vidjeti je sve što je implementirano, i ovo je odrađeno kroz tjedan dana.
 
 ## Cron Jobs
 
@@ -227,14 +225,14 @@ Cron Jobs su zapravo zadaci zakazani da se automatski izvode u predodređeno vri
 
 **Zašto ova aplikacija koristi Cron Jobs?**
 
-- Automatizacija: Umjesto da ručno provjeravaš svakog korisnika i status njegove usluge, Cron Jobs može automatski obaviti ovaj posao. To štedi vrijeme i smanjuje mogućnost greške.
-- Redovito praćenje: Postavljanjem Cron Jobs-a da redovito provjeravaju trajanje usluge, osiguravaš da nijedan korisnik neće biti zanemaren. Možeš postaviti da se zadatak izvršava svakog dana u ponoć, što će omogućiti aplikaciji da zna kada kojem korisniku istječe usluga.
-- Pravovremene obavijesti: Kada Cron Job otkrije da je usluga nekog korisnika na izmaku ili je već istekla, može automatski poslati obavijest korisniku i/ili administratoru. To omogućava poduzimanje odgovarajućih mjera, poput obnove usluge.
-- Održavanje kvalitete usluge: Redovitim i automatiziranim nadzorom usluga, možeš osigurati visoku razinu zadovoljstva korisnika i održati integritet aplikacije ili sustava.
+- **Automatizacija**: Umjesto da ručno provjeravaš svakog korisnika i status njegove usluge, Cron Jobs može automatski obaviti ovaj posao. To štedi vrijeme i smanjuje mogućnost greške.
+- **Redovito praćenje**: Postavljanjem Cron Jobs-a da redovito provjeravaju trajanje usluge, osiguravaš da nijedan korisnik neće biti zanemaren. Možeš postaviti da se zadatak izvršava svakog dana u ponoć, što će omogućiti aplikaciji da zna kada kojem korisniku istječe usluga.
+- **Pravovremene obavijesti**: Kada Cron Job otkrije da je usluga nekog korisnika na izmaku ili je već istekla, može automatski poslati obavijest korisniku i/ili administratoru. To omogućava poduzimanje odgovarajućih mjera, poput obnove usluge.
+- **Održavanje kvalitete usluge**: Redovitim i automatiziranim nadzorom usluga, možeš osigurati visoku razinu zadovoljstva korisnika i održati integritet aplikacije ili sustava.
 
 ## Deployment na AWS
 
-Kao što sam napisao, ova je aplikacija od starta planirana da se deploya na AWS, tako da ću vam ovdje napisati kako to uraditi i naravno ostaviti vam tango tutorijale ispod da vam olakšam ovaj postupak dodatno. Naravno, podrazumijeva se da već imate AWS račun ili ako ga nemate, kreirajte ga besplatno, jer bez AWS računa ne možete ništa. Naravno, ova aplikacija se može deployati na Vercel, PythonAnywhere ili Netlify, ali za druge platforme potrebne su neke izmjene, dok je za AWS sve spremno i super jednostavno za deployati zato što je aplikacija dobro pripremljena za AWS. Potrebne usluge za deployment ove aplikacije su Elastic Beanstalk i S3. E sad, ova aplikacija ima i Cron Jobs tako da možete i to napraviti u AWS-u, ali to već postaje malo kompliciranije. Ali računao sam ja i na to, tako da sam napravio i workaround za to da bude super jednostavno za bilo koga tko deploya ovu aplikaciju.
+Kao što sam napisao, ova je aplikacija od starta planirana da se deploya na AWS, tako da ću vam ovdje napisati kako to uraditi i naravno ostaviti vam tango tutorijale ispod da vam olakšam ovaj postupak dodatno. Naravno, podrazumijeva se da već imate AWS račun ili ako ga nemate, kreirajte ga besplatno, jer bez AWS računa ne možete ništa. Naravno, ova aplikacija se može deployati na Vercel, PythonAnywhere ili Netlify, ali za druge platforme potrebne su neke izmjene, dok je za AWS sve spremno i super jednostavno za deployati zato što je aplikacija dobro pripremljena za AWS. Potrebne usluge za deployment ove aplikacije su Elastic Beanstalk i S3. E sad, ova aplikacija ima i Cron Jobs tako da možete i to napraviti u AWS-u, ali to već postaje malo kompliciranije. Ali računao sam ja i na to, tako da sam napravio i workaround za to da bude super jednostavno za bilo koga tko bude koristio ovu aplikaciju.
 
 ## Cron Jobs Workaround
 
@@ -242,10 +240,15 @@ Kao što sam napisao iznad, ova aplikacija zahtijeva korištenje Cron Jobs kako 
 
 **Kako je ova funkcija napravljena?**
 
-Da bi napravio da ovo bude što jednostavnije za koristiti i da admin ima opciju da manualno pokrene tu funkciju, ja sam napravio URL koji kad se pozove pokrene funkciju koja će provjeriti svakog korisnika i njegovu pretplatu. URL za tu funkciju je **/provjera-preplata** npr. www.tvoja-domena.com/provjera-preplata/ i ako je operacija uspjela dobit ćeš odgovor "Prov
-jera obavljena".
+Da bi napravio da ovo bude što jednostavnije za koristiti i da admin ima opciju da manualno pokrene tu funkciju, ja sam napravio URL koji kad se pozove pokrene funkciju koja će provjeriti svakog korisnika i njegovu pretplatu. URL za tu funkciju je **/provjera-preplata** npr. ***www.tvoja-domena.com/provjera-preplata/*** i ako je operacija uspjela dobit ćeš odgovor "Provjera obavljena".
 
 ![image](https://github.com/TonnyG95/iptv/assets/47572512/b3c8a964-5898-4635-938c-6004863c018e)
+
+### Kreiranje Cron Job-a
+
+Kao što sam spomenuo, za pokretanje funkcije za provjeru pretplata korisnika potrebno je kreirati Cron Job. Taj Cron Job treba se pokretati svakih sat vremena i slati zahtjev na URL /provjera-preplata/. Odlučio sam koristiti web stranicu [EasyCron](https://www.easycron.com/) koja će svakih sat vremena poslati zahtjev na navedeni URL, čime će se automatski pokrenuti funkcija koja provjerava status pretplate svakog korisnika.
+
+Tutorial možete pronaći -> [Ovdje](https://app.tango.us/app/workflow/Setting-up-Cron-Jobs-with-EasyCron-6c832942485d4919bc08ec8f6e1c9fd9)
 
 ### Kreiranje Elastic Beanstalk aplikacije
 
@@ -259,16 +262,16 @@ Korištenjem AWS Elastic Beanstalk-a, developeri mogu jednostavno i brzo impleme
 
 Odlučio sam koristiti AWS Elastic Beanstalk za ovu Django aplikaciju iz nekoliko ključnih razloga:
 
-- Brz i jednostavan deployment: Elastic Beanstalk omogućava brz deployment aplikacije, automatski upravljajući infrastrukturom bez potrebe za ručnim konfiguriranjem servera.
-- Automatsko skaliranje: Mogućnost automatskog skaliranja Elastic Beanstalk-a osigurava da aplikacija uvijek ima potrebne resurse, bez nepotrebnog troška za resurse koji trenutno nisu u upotrebi.
-- Integracija s AWS servisima: Elastic Beanstalk se lako integrira s drugim AWS servisima poput Amazon RDS (za baze podataka) i Amazon S3 (za pohranu statičkih datoteka), što pruža dodatnu fleksibilnost i snagu aplikaciji.
-- Upravljanje verzijama i deployment proces: Elastic Beanstalk podržava upravljanje verzijama aplikacije, omogućavajući jednostavno ažuriranje i vraćanje na prethodne verzije ako je potrebno.
+- **Brz i jednostavan deployment**: Elastic Beanstalk omogućava brz deployment aplikacije, automatski upravljajući infrastrukturom bez potrebe za ručnim konfiguriranjem servera.
+- **Automatsko skaliranje**: Mogućnost automatskog skaliranja Elastic Beanstalk-a osigurava da aplikacija uvijek ima potrebne resurse, bez nepotrebnog troška za resurse koji trenutno nisu u upotrebi.
+- **Integracija s AWS servisima**: Elastic Beanstalk se lako integrira s drugim AWS servisima poput Amazon RDS (za baze podataka) i Amazon S3 (za pohranu statičkih datoteka), što pruža dodatnu fleksibilnost i snagu aplikaciji.
+- **Upravljanje verzijama i deployment proces**: Elastic Beanstalk podržava upravljanje verzijama aplikacije, omogućavajući jednostavno ažuriranje i vraćanje na prethodne verzije ako je potrebno.
 
 **Optimizacija aplikacije za Elastic Beanstalk i S3**
 
 Aplikacija je od samog početka optimizirana za deployment na AWS Elastic Beanstalk, uzimajući u obzir najbolje prakse za skaliranje, sigurnost i performanse. Također, aplikacija koristi Amazon S3 za pohranu statičkih i medija datoteka, osiguravajući brz i efikasan pristup resursima bez obzira na opterećenje aplikacije.
 
-[Tutorial za deployati na Elastic Beanstalk](https://app.tango.us/app/workflow/Creating-an-Elastic-Beanstalk-application-for-IPTV-Demo-4c39bb585dab4a0f812efcf571501bb7)
+Tutorial možete pronaći -> [Ovdje](https://app.tango.us/app/workflow/Creating-an-Elastic-Beanstalk-application-for-IPTV-Demo-4c39bb585dab4a0f812efcf571501bb7)
 
 ### Kreiranje S3 Bucketa
 
@@ -279,7 +282,7 @@ Da bi ova aplikacija radila, potrebno je kreirati S3 bucketa u kojem će se nala
 Nažalost, Django sam po sebi ne radi sa statičnim datotekama kao što su CSS, JavaScript i slike, tako da je potreban workaround da bi Django u produkciji učitavao statične datoteke. Kad kažem na produkciju, mislim na to da DEBUG mode, ako radimo u development verziji, tad će Django bez problema učitavati statične fajlove, no čim se DEBUG postavi na False, odnosno čim Django zna da je aplikacija live i da korisnici mogu koristiti aplikaciju, on tad više neće učitavati statične datoteke. Ne znam zašto je tako, ali nažalost tako je. Naravno, postoje Django paketi kao što su Whitenoise koji će omogućiti Djang
 u da učita statične datoteke u produkciji, ali to može biti komplicirano za postaviti, tako da sam ja odlučio koristiti S3 za statične datoteke da izbjegnem potencijalne probleme i da olakšam proces deploymenta za sebe i za sve koji odluče koristiti ovu aplikaciju. Osim što će to izbjeći moguće probleme sa statičnim datotekama, korištenje S3 za statične datoteke ujedno će znatno ubrzati rad aplikacije, što je bitno za SEO i iskustvo koje će admini i korisnici imati dok koriste aplikaciju.
 
-[Tutorial S3 Bucket](https://app.tango.us/app/workflow/Setting-Up-S3-Bucket-Permissions-for-Public-Access-1d0d72b1a3254262971e9da0ec3a589e)
+Tutorial možete pronaći -> [Ovdje](https://app.tango.us/app/workflow/Setting-Up-S3-Bucket-Permissions-for-Public-Access-1d0d72b1a3254262971e9da0ec3a589e)
 
 ## Code Potreban Za S3 Bucket
 
@@ -354,7 +357,10 @@ Amazon S3 -> BucketName -> Permissions
 
 ## Kako Pokrenuti Aplikaciju Lokalno?
 
-Da bi ovu aplikaciju pokrenuli lokalno prije svega potrbeno je da imate instaliran Python i VSCode ili bilo koji drugi IDE, ja prefreiram VSCode na vasem PC-u, Prije nego aplikaciju pokrenes lokalno **pobrini se da imas prvo kreiran S3 bucket** jel to ce biti potrbeno da bi aplikacija ucitala staticne datotke, i **pobrini se da si example.env.py preimenovao u env.py** i da si promjenio vrednosti u env.py, jel bez toga aplikacija raditi nece, to **isto moras napraviti prije nego deployas aplikaciju na Elastic Beanstalk-u.**, poslje toga mozes klknuti desnim klikom u folder gdje je aplikacija i kliknuti na Open With Code (U slucaju VSCoda) kad si otvorio aplikaciju u code editoru otvori terminal, VSCode u sebi ima terminal tako da mozes samo otici u top nav gdje je File,Edit i sl tamo imas i Terminal, tamo imas i **Terminal** kad klknes na to klikni na **New Terminal** i onda ces u taj terminal upisati komande u ovom redosljedu jednu po jednu 
+Da biste ovu aplikaciju pokrenuli lokalno, prvo je potrebno da imate instaliran Python i VSCode ili bilo koji drugi IDE. Ja preferiram VSCode. Prije nego što aplikaciju pokrenete lokalno, **pobrinite se da prvo kreirate S3 bucket** jer će to biti neophodno da aplikacija učita statičke datoteke. Takođe, **pobrinite se da ste `example.env.py` preimenovali u `env.py`** i da ste promjenili vrednosti unutar `env.py` datoteke, jer bez toga aplikacija neće raditi. Ovo **isto morate uraditi pre nego što deployujete aplikaciju na Elastic Beanstalk**.
+
+Nakon toga, možete desnim klikom na folder gde se nalazi aplikacija odabrati "Open With Code" (u slučaju VSCode-a). Kada otvorite aplikaciju u code editoru, otvorite terminal. VSCode ima ugrađeni terminal, stoga možete jednostavno otići u gornjoj navigaciji bar gdje se nalaze opcije kao što su File, Edit, itd., pronaći opciju "Terminal", i kliknuti na "New Terminal". Zatim, u terminalu unesite sledeće komande, jednu po jednu:
+
 
 ```
 pip install -r requirements.txt

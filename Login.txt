@@ -1,0 +1,11 @@
+Admin
+
+UserName: iptvadmin
+E-Mail: iptvadmin@iptvadmin.com
+Passwrod: Admin
+
+User
+
+UserName: demo@klijent.com
+Mail: demo@klijent.com
+Password: KlijenUser!

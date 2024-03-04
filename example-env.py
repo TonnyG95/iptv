@@ -26,7 +26,7 @@ os.environ["AWS_QUERYSTRING_AUTH"] = 'False'
 os.environ["AWS_S3_FILE_OVERWRITE"] = 'False' 
 os.environ["AWS_S3_SIGNATURE_VERSION"] = '' 
 
-# Google ReCaptcha
+# Google ReCaptchaadd 
 
 os.environ["RECAPTCHA_PUBLIC_KEY"] = "Your recaptcha Key"
 os.environ["RECAPTCHA_PRIVATE_KEY"] = "Your recaptcha Secret"

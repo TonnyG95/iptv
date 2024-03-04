@@ -9,7 +9,7 @@ import os
 # Main Settings
 
 os.environ["SECRET_KEY"] = "YouSecretKey"
-os.environ["DEBUG"] = "1" # Broj 1 znaci da je debug mod ukljucen sto ce ti pomoci rijesiti ako naidjes na neke problem ako zelis koristi ovo live onda 1 zamjeni sa 0 i aplikacija je produkcijski spremna
+os.environ["DEBUG"] = "0" # Broj 1 znaci da je debug mod ukljucen sto ce ti pomoci rijesiti ako naidjes na neke problem ako zelis koristi ovo live onda 1 zamjeni sa 0 i aplikacija je produkcijski spremna
 
 # AWS S3 Settings
 
